@@ -1,0 +1,48 @@
+{    "tecnologias": [
+        {
+            "id": 1,
+            "nome": "FolhaCerta (Nuvem)",
+            "categoria": "Serviço em Nuvem Privada",
+            "status": "Disponível para uso",
+            "versão": "2.13.0",
+            "fabricante": "FolhaCerta",
+            "atualizacao": "10/10/2019"
+        },
+        {
+            "id": 2,
+            "nome": "Check Point Capsule Docs",
+            "categoria": "Segurança de Dados",
+            "status": "Disponível para uso",
+            "versão": "E80.82",
+            "fabricante": "Check Point Software Technologies",
+            "atualizacao": "21/05/2020"
+        },
+        {
+            "id": 3,
+            "nome": "Stealth Core",
+            "categoria": "Serviço em Nuvem Privada",
+            "status": "Disponível para uso",
+            "versão": "3.4",
+            "fabricante": "UNISYS",
+            "atualizacao": "20/02/2020"
+        },
+        {
+            "id": 4,
+            "nome": "Maltego XL",
+            "categoria": "Inteligências",
+            "status": "Disponível para uso",
+            "versão": "4.1.13.11516",
+            "fabricante": "Paterva de Pretória",
+            "atualizacao": "31/01/2022"
+        },
+        {
+            "id": 5,
+            "nome": "BYND",
+            "categoria": "Interface do Usuário",
+            "status": "Disponível para uso",
+            "versão": "1.0",
+            "fabricante": "Bynd Serviços de Tecnologia",
+            "atualizacao": "04/08/2018"
+        }
+    ]
+}

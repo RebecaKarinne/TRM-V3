@@ -1,0 +1,99 @@
+<body>
+
+    <!-- teste pesquisa -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../../../index.html">TRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- me-auto pushes the search bar to right -->
+                </div>
+                <form class="d-flex w-50" [formGroup]="formGroupPesquisa"
+                    (ngSubmit)="formGroupPesquisa.valid && listarTecnologias()">
+                    
+                        <mat-form-field>
+                            <input matInput formControlName="nome" autocomplete="off" class="form-control me-2"
+                            type="search" placeholder="Search" aria-label="Search">
+                        </mat-form-field>
+                        <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+                        <a class="btn btn-outline-success" href="../../search/search/search.component.html">Search</a>
+                    
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+    <!-- fim teste pesquisa -->
+
+    <div class="componente-container">
+        <div *ngIf="tecnologias$ | async as tecnologias; else resultado">
+
+            <div class="container-fluid mt-5">
+                <div class="row">
+
+                    <!-- Categorias -->
+                    <div class="col-sm-4">
+                        <!-- search categories -->
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a class="active">
+                                    <div class="float-right">{{tecnologias.length}}</div>
+                                    Tecnologias
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="float-right">456</div>
+                                Dependências
+                            </li>
+                            <li class="list-group-item">
+                                <div class="float-right">6</div>
+                                Integrações
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <h2> {{tecnologias.length}} Resultados encontrados</h2>
+                        <ul class="list-group">
+                            <!-- Tecnologias -->
+                            <li class="d-flex flex-justify-start border-top-1x mt-4"
+                                *ngFor="let tecnologia of tecnologias">
+                                <div class="flex-shrink-0 me-3 mt-3">
+                                    <i class="bi-collection"></i>
+                                </div>
+                                <div class="flex-auto">
+                                    <h3 class="mt-2">
+                                        <a
+                                            href="../../../details/details/details.component.html">{{tecnologia.nome}}</a>
+                                    </h3>
+                                    <div class="">{{tecnologia.categoria}}</div>
+                                    <div>
+                                        <span class="badge bg-primary rounded-pill">Tag expression 1</span>
+                                        <span class="badge bg-primary rounded-pill">Tag expression 2</span>
+                                        <span class="badge bg-primary rounded-pill">Tag expression 3</span>
+                                        <span class="badge bg-primary rounded-pill">Tag expression 4</span>
+                                    </div>
+                                    <div class="mt-2 text-secondary fs-10 fw-lighter"> Última atualização:
+                                        {{tecnologia.atualizacao}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensagem para caso não obtenha resultados da busca -->
+    <ng-template #resultado>
+        Nenhuma tecnologia encontrada.
+    </ng-template>
+
+</body>
